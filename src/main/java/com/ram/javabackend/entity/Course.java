@@ -16,8 +16,8 @@ import jakarta.persistence.Table;
 public class Course {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String title;
-    private String code;
+    private String name;
+    private String description;
     @ManyToMany(mappedBy = "courses",fetch = FetchType.LAZY)
     private List <Teacher> teachers;
     @OneToMany(mappedBy = "course",fetch = FetchType.LAZY)
@@ -29,17 +29,17 @@ public class Course {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }   
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
-    public String getCode() {
-        return code;
+    public String getDescription() {
+        return description;
     }
-    public void setCode(String code) {
-        this.code = code;
+    public void setDescription(String description) {
+        this.description = description;
     }
     public List<Teacher> getTeachers() {
         return teachers;
